@@ -21,21 +21,28 @@ When pushing a tag to git, TravisCI automatically creates a release.
 
 ## Release to Staging
 
-```sh
-export NEXUS_PASSWD=xxxx
-export RC_NUMBER=1
+```
 export LUCENE_VERSION=`cat LUCENE_VERSION`
 export NEOLOGD_VERSION_DATE=`cat NEOLOGD_VERSION_DATE`
-export VERSION="${LUCENE_VERSION}-${NEOLOGD_VERSION_DATE}-${RC_NUMBER}"
+export RC_NUMBER=1
+
+export VERSION_TAG="v${LUCENE_VERSION}-${NEOLOGD_VERSION_DATE}-${RC_NUMBER}"
+git tag v8.8.2-20200910.1
+git push origin v8.8.2-20200910.1
+```
+
+```sh
+export NEXUS_PASSWD=xxxx
+export PACKAGE_VERSION="${LUCENE_VERSION}-${NEOLOGD_VERSION_DATE}-${RC_NUMBER}"
 
 mvn gpg:sign-and-deploy-file \
   -s ./settings.xml \
   -DpomFile=./lucene-analyzers-kuromoji-neologd.pom \
   -DrepositoryId=sonatype-nexus-staging \
   -Durl=https://oss.sonatype.org/service/local/staging/deploy/maven2/ \
-  -Dfile=dist/lucene-analyzers-kuromoji-neologd-${VERSION}.jar \
-  -Dsources=dist/lucene-analyzers-kuromoji-neologd-${VERSION}-sources.jar \
-  -Djavadoc=dist/lucene-analyzers-kuromoji-neologd-${VERSION}-javadoc.jar
+  -Dfile=dist/lucene-analyzers-kuromoji-neologd-${PACKAGE_VERSION}.jar \
+  -Dsources=dist/lucene-analyzers-kuromoji-neologd-${PACKAGE_VERSION}-sources.jar \
+  -Djavadoc=dist/lucene-analyzers-kuromoji-neologd-${PACKAGE_VERSION}-javadoc.jar
 ```
 
 ## Release from Staging

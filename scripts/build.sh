@@ -310,4 +310,4 @@ SRC_DOC_JAR_NAME=`ls -1 lucene-analyzers-kuromoji-neologd-*-SNAPSHOT-javadoc.jar
 DST_DOC_JAR_NAME=`echo ${SRC_DOC_JAR_NAME} | perl -wp -e 's/(.+)-SNAPSHOT(.+)/$1$2/'`
 mv $SRC_DOC_JAR_NAME ${KUROMOJI_NEOLOGD_BUILD_WORK_DIR}/dist/$DST_DOC_JAR_NAME
 
-logging main INFO "Successfully built => ${DST_JAR_NAME}, ${DST_SOURCE_JAR_NAME}"
+logging main INFO "Successfully built => ${DST_JAR_NAME}, ${DST_SOURCE_JAR_NAME}, ${DST_DOC_JAR_NAME}"
