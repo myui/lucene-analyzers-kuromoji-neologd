@@ -7,7 +7,7 @@
 
 	<groupId>io.github.myui</groupId>
 	<artifactId>lucene-analyzers-kuromoji-neologd</artifactId>
-	<version>8.8.2-20200910-1</version>
+	<version>8.8.2-20200910.2</version>
 	<packaging>jar</packaging>
 
 	<name>lucene-analyzers-kuromoji-neologd</name>
