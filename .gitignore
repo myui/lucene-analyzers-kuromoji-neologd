@@ -5,8 +5,10 @@
 *.bak
 \#*#
 
-# Compiled class file
+# java
 *.class
+*.jar
+*.asc
 
 # Log file
 *.log
