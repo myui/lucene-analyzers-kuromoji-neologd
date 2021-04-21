@@ -1,0 +1,45 @@
+sudo: false
+
+arch: amd64
+os: linux
+dist: focal
+
+language: java
+jdk:
+  - openjdk8
+
+branches:
+  only:
+  - master
+  - "/^v[0-9\\.]+(-rc[0-9]+)?/"
+
+notifications:
+  email: false
+
+# Caching so the next build will be fast too.
+cache:
+  apt: true
+  directories:
+    - $HOME/.m2
+
+before_install:
+  - sudo apt-get update
+
+install:
+  - sudo apt-get install --no-install-recommends -y build-essential
+  - sudo apt-get install --no-install-recommends -y maven ant curl git file binutils
+
+script:
+  - ./scripts/build.sh -d `cat NEOLOGD_VERSION_DATE` -L releases/lucene-solr/`cat LUCENE_VERSION`
+
+deploy:
+  provider: releases
+  api_key:
+    secure: mQo0AO64DwVOsXQREG6fjtOickQffaPnSiMkoExPF2zRSAC/969os5YVrgS9AszGohdAEbN40nunaxmV9h95Gb6iUC7DWZkiyDS0xg8ChqJyF8vQVQcZxw5DtxaSKPexivkPsK6fi2Qhz0Rsgsx/2sPVV0EfZ8Kal97iBhqlz8S3n3mqAN0suEHymZND2iKWx6IJjOGKC9sAW915voBQ9M/m9VZwP95se36RuXOUsrG/hFOHj7thPHu0s9xCXZ8jYeUfrHbUngBPE5z33DUF+Qj0Ph3ac+Db5DlHTrgyxnkglFwrEBu3EVa8dijqRWOb/utzpvu/oX6s3lZhH+8lbPl4kP5VlU++aX0CHHJpI1on8AibJGEjF82xK7JlBX/EEz6/hxTpyAUSXDYWtHUgCojq1vpwfaUKp2eAmfUA8iAgcjUmGhT1ba10haZi1KHj0XzU7iNoFrSuiGoboufA46PGb74YlfhcrqV7aGjDU/NGLt1hu3dYVz1YcSNohIg5rxGbAX9bBpu/DEKIrOR73k19HzC4DJETW7gRYUrh+mLY1EMlGKPCyzxAs9Ij12KvYvqwPFdTR9ClobzqpvGv0jzqF/9TiR3bzbc5kdVbYIWa8Mjuw4NfrSvLyJyZHdNx68WdXKcxJwEsiovuVU7t+BKALEZ5TQ14VjyWDm7PsI0=
+  file_glob: true
+  file: dist/*.jar
+  on:
+    repo: myui/lucene-analyzers-kuromoji-neologd
+    tags: true
+  skip_cleanup: true # do not delete the built assets
+  overwrite: true

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>io.github.myui</groupId>
+	<artifactId>lucene-analyzers-kuromoji-neologd</artifactId>
+	<version>8.8.2</version>
+	<packaging>jar</packaging>
+
+	<name>lucene-analyzers-kuromoji-neologd</name>
+	<description>org.apache.lucene:lucene-analyzers-kuromoji with NEologd</description>
+
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+	<developers>
+		<developer>
+			<name>Makoto Yui</name>
+			<email>myui[at]apache.org</email>
+			<organization>Treasure Data, Inc.</organization>
+			<organizationUrl>https://www.treasuredata.com/</organizationUrl>
+		</developer>
+	</developers>
+
+	<scm>
+		<connection>scm:git:git://github.com/myui/lucene-analyzers-kuromoji-neologd.git</connection>
+		<developerConnection>scm:git:ssh://github.com/myui/lucene-analyzers-kuromoji-neologd.git</developerConnection>
+		<url>https://github.com/myui/lucene-analyzers-kuromoji-neologd</url>
+	</scm>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>sonatype-nexus-snapshots</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>sonatype-nexus-staging</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+	</distributionManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.lucene</groupId>
+			<artifactId>lucene-analyzers-common</artifactId>
+			<version>${project.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.lucene</groupId>
+			<artifactId>lucene-core</artifactId>
+			<version>${project.version}</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+
+</project>
