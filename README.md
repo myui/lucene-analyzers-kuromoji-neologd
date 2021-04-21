@@ -13,7 +13,7 @@ When pushing a tag to git, TravisCI automatically creates a release.
 <dependency>
     <groupId>io.github.myui</groupId>
     <artifactId>lucene-analyzers-kuromoji-neologd</artifactId>
-    <version>8.8.2-20200910.1</version>
+    <version>8.8.2-20200910.2</version>
 </dependency>
 ```
 
@@ -24,8 +24,8 @@ When pushing a tag to git, TravisCI automatically creates a release.
 ```
 export LUCENE_VERSION=`cat LUCENE_VERSION`
 export NEOLOGD_VERSION_DATE=`cat NEOLOGD_VERSION_DATE`
-export RC_NUMBER=1
-export PACKAGE_VERSION="${LUCENE_VERSION}-${NEOLOGD_VERSION_DATE}-${RC_NUMBER}"
+export RC_NUMBER=2
+export PACKAGE_VERSION="${LUCENE_VERSION}-${NEOLOGD_VERSION_DATE}.${RC_NUMBER}"
 
 mvn versions:set -f lucene-analyzers-kuromoji-neologd.pom -DnewVersion=${PACKAGE_VERSION} -DgenerateBackupPoms=false
 git add lucene-analyzers-kuromoji-neologd.pom
