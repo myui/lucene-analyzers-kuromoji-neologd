@@ -2,7 +2,7 @@ sudo: false
 
 arch: amd64
 os: linux
-dist: focal
+dist: bionic
 
 language: java
 jdk:
