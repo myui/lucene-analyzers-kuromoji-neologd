@@ -1,5 +1,5 @@
 # lucene-analyzers-kuromoji-neologd
-[![Build Status](https://travis-ci.org/myui/lucene-analyzers-kuromoji-neologd.svg?branch=master)](https://travis-ci.org/myui/lucene-analyzers-kuromoji-neologd) 
+[![Build Status](https://travis-ci.com/myui/lucene-analyzers-kuromoji-neologd.svg?branch=master)](https://travis-ci.com/myui/lucene-analyzers-kuromoji-neologd) 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.myui/lucene-analyzers-kuromoji-neologd/badge.svg)](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22io.github.myui%22%20a%3Alucene-analyzers-kuromoji-neologd) 
 [![License](http://img.shields.io/:license-Apache_v2-blue.svg)](https://github.com/myui/lucene-analyzers-kuromoji-neologd/blob/master/LICENSE)
 
