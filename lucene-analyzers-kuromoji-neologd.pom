@@ -12,6 +12,7 @@
 
 	<name>lucene-analyzers-kuromoji-neologd</name>
 	<description>org.apache.lucene:lucene-analyzers-kuromoji with NEologd</description>
+	<url>https://github.com/myui/lucene-analyzers-kuromoji-neologd</url>
 
 	<licenses>
 		<license>
@@ -19,6 +20,7 @@
 			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
 		</license>
 	</licenses>
+
 	<developers>
 		<developer>
 			<name>Makoto Yui</name>
